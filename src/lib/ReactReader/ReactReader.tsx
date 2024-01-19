@@ -76,19 +76,21 @@ export class ReactReader extends PureComponent<
     })
   }
 
+  /* ---変更--- */
   next = () => {
-    const node = this.readerRef.current
-    if (node && node.nextPage) {
-      node.nextPage()
-    }
-  }
-
-  prev = () => {
     const node = this.readerRef.current
     if (node && node.prevPage) {
       node.prevPage()
     }
   }
+
+  prev = () => {
+    const node = this.readerRef.current
+    if (node && node.nextPage) {
+      node.nextPage()
+    }
+  }
+  /* ---変更--- */
 
   onTocChange = (toc: NavItem[]) => {
     const { tocChanged } = this.props
